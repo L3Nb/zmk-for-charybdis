@@ -48,13 +48,22 @@
         };
     };
 
+    behaviors {
+        shft_to_caps: shft_to_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHFT_TO_CAPS";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        base {
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E      &kp R     &kp T       &kp Y        &kp U  &kp I      &kp O       &kp P          &kp ENTER
-&kp CAPS        &kp A  &kp S  &kp D      &kp F     &kp G       &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON  &kp BACKSPACE
+&shft_to_caps   &kp A  &kp S  &kp D      &kp F     &kp G       &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON  &kp BACKSPACE
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C      &kp V     &kp B       &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp QUESTION   &kp SLASH
                               &kp LCTRL  &kp LGUI  &kp LALT    &lt 1 SPACE  &none
             >;
@@ -71,7 +80,7 @@
             >;
         };
 
-        layer_3 {
+        num {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
 &trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
