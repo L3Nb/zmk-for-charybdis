@@ -311,7 +311,7 @@
             require-prior-idle-ms = <65>;
             retro-tap;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-key-positions = <0 1 2 3 16 17>; // примерные индексы для левой половины + большие пальцы
         };
 
         // Right-hand HRM
@@ -324,14 +324,15 @@
             require-prior-idle-ms = <55>;
             retro-tap;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-key-positions = <18 19 20 21 34 35>; // примерные индексы для правой половины + большие пальцы
         };
 
+        // Tap dance / layer behaviors
         td_esc_scrl_slow: td_esc_scrl_slow {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&lt 7 ESC>, <&mo 6>; // hold, tap, double_tap
+            bindings = <&lt 7 ESC>, <&mo 6>;
         };
 
         lt_nav: nav_layer_tap {
@@ -346,7 +347,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <110>;
-            bindings = <&lt_nav 2 SPACE>, <&kp SPACE>; // hold, tap, double_tap
+            bindings = <&lt_nav 2 SPACE>, <&kp SPACE>;
         };
 
         mo_clk: mo_click {
@@ -362,7 +363,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <170>;
-            bindings = <&mo_clk 3 LCLK>, <&mkp LCLK>; // hold, tap, double_tap
+            bindings = <&mo_clk 3 LCLK>, <&mkp LCLK>;
         };
 
         mo_kp: mo_kp {
@@ -378,7 +379,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <170>;
-            bindings = <&mo_kp 1 BACKSPACE>, <&kp BACKSPACE>; // hold, tap, double_tap
+            bindings = <&mo_kp 1 BACKSPACE>, <&kp BACKSPACE>;
         };
 
         httl: ht_two_layers {
@@ -392,14 +393,14 @@
         td_layers: td_layer_swap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&to 4>; // tap, double_tap
+            bindings = <&to 0>, <&to 4>;
         };
 
         td_clk_scrl: td_click_or_scroll {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&mkp RCLK>, <&mo 8>;  // tap/hold, double_tap
+            bindings = <&mkp RCLK>, <&mo 8>;
         };
 
         td_bore: BASE_or_EXTRA {
@@ -408,6 +409,7 @@
             bindings = <&mo 5>, <&to 0>;
         };
 
+        // Mod-morph punctuation
         mm_qm_ex: question_exclamation {
             compatible    = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
