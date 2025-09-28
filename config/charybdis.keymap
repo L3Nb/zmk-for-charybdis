@@ -44,8 +44,7 @@
         ruen: ruen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
-            label = "RUEN";
+            bindings = <&kp LALT &kp LSHIFT>;
         };
     };
 
