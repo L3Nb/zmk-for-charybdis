@@ -10,6 +10,24 @@
 };
 
 / {
+    unicode {
+        compatible = "zmk,unicode";
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        en_dash: en_dash {
+            unicode = <0x2013>; /* – */
+        };
+
+        laquo: laquo {
+            unicode = <0x00AB>; /* « */
+        };
+
+        raquo: raquo {
+            unicode = <0x00BB>; /* » */
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
