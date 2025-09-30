@@ -74,7 +74,7 @@
         code_block: code_block {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&triple_grave &kp ENTER &kp ENTER &triple_grave &kp UP>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp ENTER &kp ENTER &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
             label = "CODE_BLOCK";
         };
 
