@@ -53,13 +53,37 @@
         };
 
         scroll {
-            bindings = <&tog 4>;
+            bindings = <&tog 5>;
             key-positions = <31 33>;
         };
 
         snipe {
-            bindings = <&tog 5>;
+            bindings = <&tog 6>;
             key-positions = <34 32>;
+        };
+
+        to_ru_layer {
+            bindings = <&to 1>;
+            key-positions = <24 38>;
+            layers = <0>;
+        };
+
+        To_en_layer {
+            bindings = <&to 0>;
+            key-positions = <24 38>;
+            layers = <1>;
+        };
+
+        num_en {
+            bindings = <&tog 2>;
+            key-positions = <39 40>;
+            layers = <0 2>;
+        };
+
+        num_ru {
+            bindings = <&tog 3>;
+            key-positions = <39 40>;
+            layers = <1 3>;
         };
     };
 
@@ -77,13 +101,6 @@
             bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp ENTER &kp ENTER &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
             label = "CODE_BLOCK";
         };
-
-        dash: dash {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT &kp N0 &kp N1 &kp N5 &kp N0 &kp LALT>;
-            label = "DASH";
-        };
     };
 
     behaviors {
@@ -92,13 +109,6 @@
             label = "SHFT_TO_CAPS";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&caps_word>;
-        };
-
-        num_layer: num_layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUM_LAYER";
-            #binding-cells = <0>;
-            bindings = <&sl 3>, <&tog 3>;
         };
 
         myagkiy_tverdiy: myagkiy_tverdiy {
@@ -142,10 +152,10 @@
 
         base {
             bindings = <
-&kp ESCAPE     &kp Q  &kp W  &kp E      &kp R     &kp T       &kp Y        &kp U       &kp I  &kp O  &kp P  &kp ENTER
-&kp TAB        &kp A  &kp S  &kp D      &kp F     &kp G       &kp H        &kp J       &kp K  &kp L  &none  &kp BACKSPACE
-&shft_to_caps  &kp Z  &kp X  &kp C      &kp V     &kp B       &kp N        &kp M       &none  &none  &none  &none
-                             &kp LCTRL  &kp LGUI  &kp LALT    &lt 2 SPACE  &num_layer
+&kp ESCAPE     &kp Q  &kp W  &kp E      &kp R     &kp T       &kp Y        &kp U        &kp I  &kp O  &kp P  &kp ENTER
+&kp TAB        &kp A  &kp S  &kp D      &kp F     &kp G       &kp H        &kp J        &kp K  &kp L  &none  &kp BACKSPACE
+&shft_to_caps  &kp Z  &kp X  &kp C      &kp V     &kp B       &kp N        &kp M        &none  &none  &none  &none
+                             &kp LCTRL  &kp LGUI  &kp LALT    &lt 4 SPACE  &lt 2 SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -156,21 +166,12 @@
 &kp ESCAPE     &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &ye_yo                &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &sha_scha           &kp RU_CYRILLIC_ZE  &myagkiy_tverdiy     &kp ENTER
 &kp TAB        &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &kp BACKSPACE
 &shft_to_caps  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_HA
-                                                              &kp LCTRL           &kp LGUI            &kp LALT              &lt 2 SPACE         &num_layer
+                                                              &kp LCTRL           &kp LGUI            &kp LALT              &lt 4 RU_SPACE      &lt 3 RU_SPACE
             >;
 
             sensor-bindings =
                 <&inc_dec_kp PG_UP PG_DN>,
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        nav {
-            bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4     &kp F5    &kp F6      &kp F7  &kp F8            &kp F9    &kp F10     &kp F11  &kp F12
-&trans  &trans  &trans  &trans     &trans    &trans      &trans  &kp K_PLAY_PAUSE  &kp UP    &kp K_MUTE  &trans   &trans
-&trans  &trans  &trans  &trans     &trans    &trans      &trans  &kp LEFT          &kp DOWN  &kp RIGHT   &trans   &trans
-                        &kp LCTRL  &kp LGUI  &kp LALT    &none   &none
-            >;
         };
 
         num_en {
@@ -179,6 +180,24 @@
 &kp HASH       &kp SQT    &kp COLON    &kp LPAR          &kp RIGHT_PARENTHESIS  &kp PRCNT           &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
 &kp AMPERSAND  &kp CARET  &kp UNDER    &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp QMARK           &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA     &kp DOT
                                        &trans            &trans                 &kp EXCL            &kp SPACE  &kp NUMBER_0
+            >;
+        };
+
+        num_ru {
+            bindings = <
+&kp RU_BACKSLASH  &kp PIPE        &kp AT_SIGN   &kp LEFT_BRACE           &kp RIGHT_BRACE    &grave_codeblock      &kp RU_PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
+&kp HASH          &kp APOSTROPHE  &kp RU_COLON  &kp RU_LEFT_PARENTHESIS  &kp RU_RPAR        &kp RU_PERCENT        &kp RU_MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RU_SLASH  &kp BACKSPACE
+&kp AMPERSAND     &kp CARET       &kp UNDER     &kp LEFT_BRACKET         &kp RIGHT_BRACKET  &kp RU_QUESTION       &kp RU_EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RU_COMMA  &kp RU_DOT
+                                                &trans                   &trans             &kp RU_EXCLAMATION    &kp SPACE     &kp NUMBER_0
+            >;
+        };
+
+        nav {
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4     &kp F5    &kp F6      &kp F7  &kp F8            &kp F9    &kp F10     &kp F11  &kp F12
+&trans  &trans  &trans  &trans     &trans    &trans      &trans  &kp K_PLAY_PAUSE  &kp UP    &kp K_MUTE  &trans   &trans
+&trans  &trans  &trans  &trans     &trans    &trans      &trans  &kp LEFT          &kp DOWN  &kp RIGHT   &trans   &trans
+                        &kp LCTRL  &kp LGUI  &kp LALT    &none   &none
             >;
         };
 
