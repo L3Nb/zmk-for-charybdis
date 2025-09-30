@@ -159,8 +159,8 @@
             bindings = <
 &trans  &trans  &kp LEFT_BRACE    &kp LEFT_BRACE    &kp RIGHT_BRACE        &grave_codeblock    &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
 &trans  &trans  &kp LPAR          &kp LPAR          &kp RIGHT_PARENTHESIS  &kp PRCNT           &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
-&trans  &trans  &kp LEFT_BRACKET  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &trans              &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA     &kp DOT
-                                  &trans            &trans                 &trans              &kp SPACE  &kp NUMBER_0
+&trans  &trans  &kp LEFT_BRACKET  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp QMARK           &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA     &kp DOT
+                                  &trans            &trans                 &kp EXCL            &kp SPACE  &kp NUMBER_0
             >;
         };
 
