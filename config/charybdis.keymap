@@ -53,12 +53,12 @@
         };
 
         scroll {
-            bindings = <&tog 5>;
+            bindings = <&tog 4>;
             key-positions = <31 33>;
         };
 
         snipe {
-            bindings = <&tog 6>;
+            bindings = <&tog 5>;
             key-positions = <34 32>;
         };
     };
@@ -142,9 +142,9 @@
 
         base {
             bindings = <
-&kp ESCAPE     &kp Q  &kp W  &kp E      &kp R     &kp T       &kp Y        &kp U       &kp I  &kp O  &kp P          &kp ENTER
-&kp TAB        &kp A  &kp S  &kp D      &kp F     &kp G       &kp H        &kp J       &kp K  &kp L  &kp SEMICOLON  &kp BACKSPACE
-&shft_to_caps  &kp Z  &kp X  &kp C      &kp V     &kp B       &kp N        &kp M       &none  &none  &none          &none
+&kp ESCAPE     &kp Q  &kp W  &kp E      &kp R     &kp T       &kp Y        &kp U       &kp I  &kp O  &kp P  &kp ENTER
+&kp TAB        &kp A  &kp S  &kp D      &kp F     &kp G       &kp H        &kp J       &kp K  &kp L  &none  &kp BACKSPACE
+&shft_to_caps  &kp Z  &kp X  &kp C      &kp V     &kp B       &kp N        &kp M       &none  &none  &none  &none
                              &kp LCTRL  &kp LGUI  &kp LALT    &lt 2 SPACE  &num_layer
             >;
 
@@ -173,21 +173,12 @@
             >;
         };
 
-        num {
+        num_en {
             bindings = <
-&trans  &kp HASH  &kp AT_SIGN  &kp LEFT_BRACE    &kp RIGHT_BRACE        &grave_codeblock    &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
-&trans  &trans    &kp HASH     &kp LPAR          &kp RIGHT_PARENTHESIS  &kp PRCNT           &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
-&trans  &kp NUBS  &kp PIPE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp QMARK           &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA     &kp DOT
-                               &trans            &trans                 &kp EXCL            &kp SPACE  &kp NUMBER_0
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&kp NUBS       &kp PIPE   &kp AT_SIGN  &kp LEFT_BRACE    &kp RIGHT_BRACE        &grave_codeblock    &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
+&kp HASH       &kp SQT    &kp COLON    &kp LPAR          &kp RIGHT_PARENTHESIS  &kp PRCNT           &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
+&kp AMPERSAND  &kp CARET  &kp UNDER    &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp QMARK           &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA     &kp DOT
+                                       &trans            &trans                 &kp EXCL            &kp SPACE  &kp NUMBER_0
             >;
         };
 
