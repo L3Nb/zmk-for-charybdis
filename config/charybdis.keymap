@@ -179,7 +179,7 @@
 &kp NUBS       &kp PIPE   &kp AT_SIGN  &kp LEFT_BRACE    &kp RIGHT_BRACE        &grave_codeblock    &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
 &kp HASH       &kp SQT    &kp COLON    &kp LPAR          &kp RIGHT_PARENTHESIS  &kp PRCNT           &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
 &kp AMPERSAND  &kp CARET  &kp UNDER    &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp QMARK           &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA     &kp DOT
-                                       &trans            &trans                 &kp EXCL            &kp SPACE  &kp NUMBER_0
+                                       &kp LEFT_SHIFT    &kp LEFT_ALT           &kp EXCL            &kp SPACE  &kp NUMBER_0
             >;
         };
 
@@ -188,7 +188,7 @@
 &kp RU_BACKSLASH  &kp PIPE        &kp AT_SIGN   &kp LEFT_BRACE           &kp RIGHT_BRACE    &grave_codeblock      &kp RU_PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
 &kp HASH          &kp APOSTROPHE  &kp RU_COLON  &kp RU_LEFT_PARENTHESIS  &kp RU_RPAR        &kp RU_PERCENT        &kp RU_MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RU_SLASH  &kp BACKSPACE
 &kp AMPERSAND     &kp CARET       &kp UNDER     &kp LEFT_BRACKET         &kp RIGHT_BRACKET  &kp RU_QUESTION       &kp RU_EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RU_COMMA  &kp RU_DOT
-                                                &trans                   &trans             &kp RU_EXCLAMATION    &kp SPACE     &kp NUMBER_0
+                                                &kp LEFT_SHIFT           &kp LEFT_ALT       &kp RU_EXCLAMATION    &kp SPACE     &kp NUMBER_0
             >;
         };
 
