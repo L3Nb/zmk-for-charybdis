@@ -73,27 +73,14 @@
             key-positions = <39 40>;
             layers = <1 3>;
         };
+
+        combo_caps {
+            bindings = <&kp CAPS>;
+            key-positions = <13 14>;
+        };
     };
 
     macros {
-        space_ru_layer: hold_tap_custom {
-            compatible = "zmk,behavior-macro-one-param";   // два параметра: tap и hold
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press>,
-                <&space_to_ru_layer &macro_param_1to1>,
-                <&macro_press>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_release>,
-                <&space_to_ru_layer>;
-        };
-
         triple_grave: triple_grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -107,7 +94,6 @@
             bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp ENTER &kp ENTER &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
             label = "CODE_BLOCK";
         };
-        
 
         to_ru: to_ru {
             compatible = "zmk,behavior-macro";
@@ -142,44 +128,24 @@
         en_layer: en_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LEFT_ALT) &to 1>;
+            bindings = <&kp LA(LEFT_SHIFT) &to 1>;
             label = "EN_LAYER";
         };
 
         ru_layer: ru_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LEFT_ALT) &to 0>;
+            bindings = <&kp LA(LEFT_SHIFT) &to 0>;
             label = "RU_LAYER";
-        };
-
-        space_en_layer: space_en_layer {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press>,
-                <&space_to_en_layer &macro_param_1to1>,
-                <&macro_press>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_release>,
-                <&space_to_en_layer>;
-
-            label = "SPACE_EN_LAYER";
         };
     };
 
     behaviors {
-        shft_to_caps: shft_to_caps {
+        alt_to_caps: alt_to_caps {
             compatible = "zmk,behavior-tap-dance";
-            label = "SHFT_TO_CAPS";
+            label = "ALT_TO_CAPS";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+            bindings = <&kp LEFT_ALT>, <&caps_word>;
         };
 
         myagkiy_tverdiy: myagkiy_tverdiy {
@@ -217,22 +183,22 @@
             bindings = <&kp GRAVE>, <&triple_grave>, <&code_block>;
         };
 
-        alt_to_ru_layer: alt_to_ru_layer {
+        shift_to_ru_layer: shift_to_ru_layer {
             compatible = "zmk,behavior-mod-morph";
-            label = "ALT_TO_RU_LAYER";
-            bindings = <&kp LEFT_ALT>, <&ru_layer>;
+            label = "SHIFT_TO_RU_LAYER";
+            bindings = <&kp LEFT_SHIFT>, <&ru_layer>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LALT)>;
         };
 
-        alt_to_en_layer: alt_to_en_layer {
+        shift_to_en_layer: shift_to_en_layer {
             compatible = "zmk,behavior-mod-morph";
-            label = "ALT_TO_EN_LAYER";
-            bindings = <&kp LEFT_ALT>, <&en_layer>;
+            label = "SHIFT_TO_EN_LAYER";
+            bindings = <&kp LEFT_SHIFT>, <&en_layer>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LALT)>;
         };
     };
 
@@ -241,10 +207,10 @@
 
         base {
             bindings = <
-&kp ESCAPE     &kp Q  &kp W  &kp E      &kp R     &kp T               &kp Y        &kp U        &kp I  &kp O  &kp P  &kp ENTER
-&kp TAB        &kp A  &kp S  &kp D      &kp F     &kp G               &kp H        &kp J        &kp K  &kp L  &none  &kp BACKSPACE
-&shft_to_caps  &kp Z  &kp X  &kp C      &kp V     &kp B               &kp N        &kp M        &none  &none  &none  &none
-                             &kp LCTRL  &kp LGUI  &alt_to_ru_layer    &lt 4 SPACE  &lt 2 SPACE
+&kp ESCAPE          &kp Q  &kp W  &kp E      &kp R     &kp T           &kp Y        &kp U        &kp I  &kp O  &kp P  &kp ENTER
+&kp TAB             &kp A  &kp S  &kp D      &kp F     &kp G           &kp H        &kp J        &kp K  &kp L  &none  &kp BACKSPACE
+&shift_to_ru_layer  &kp Z  &kp X  &kp C      &kp V     &kp B           &kp N        &kp M        &none  &none  &none  &none
+                                  &kp LCTRL  &kp LGUI  &kp LEFT_ALT    &lt 4 SPACE  &lt 2 SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -252,10 +218,10 @@
 
         rus {
             bindings = <
-&kp ESCAPE     &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &ye_yo                &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &sha_scha           &kp RU_CYRILLIC_ZE  &myagkiy_tverdiy     &kp ENTER
-&kp TAB        &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &kp BACKSPACE
-&shft_to_caps  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_HA
-                                                              &kp LCTRL           &kp LGUI            &alt_to_en_layer      &lt 4 SPACE         &lt 3 SPACE
+&kp ESCAPE          &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &ye_yo                &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &sha_scha           &kp RU_CYRILLIC_ZE  &myagkiy_tverdiy     &kp ENTER
+&kp TAB             &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &kp BACKSPACE
+&shift_to_ru_layer  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_HA
+                                                                   &kp LCTRL           &kp LGUI            &alt_to_caps          &lt 4 SPACE         &lt 3 SPACE
             >;
 
             sensor-bindings =
@@ -266,7 +232,7 @@
         num_en {
             bindings = <
 &kp NUBS       &kp PIPE   &kp AT_SIGN  &kp LEFT_BRACE    &kp RIGHT_BRACE        &grave_codeblock    &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
-&kp HASH       &kp SQT    &kp COLON    &kp LPAR          &kp RIGHT_PARENTHESIS  &kp PRCNT           &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
+&kp HASH       &kp SQT    &kp SEMI     &kp LPAR          &kp RIGHT_PARENTHESIS  &kp PRCNT           &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &kp BACKSPACE
 &kp AMPERSAND  &kp CARET  &kp UNDER    &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp QMARK           &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA     &kp DOT
                                        &kp LEFT_SHIFT    &kp LEFT_ALT           &kp EXCL            &kp SPACE  &kp NUMBER_0
             >;
@@ -274,10 +240,10 @@
 
         num_ru {
             bindings = <
-&kp RU_BACKSLASH  &en PIPE        &en AT_SIGN   &en LEFT_BRACE           &en RIGHT_BRACE    &grave_codeblock      &kp RU_PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
-&en HASH          &en APOSTROPHE  &kp RU_COLON  &kp RU_LEFT_PARENTHESIS  &kp RU_RPAR        &kp RU_PERCENT        &kp RU_MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RU_SLASH  &kp BACKSPACE
-&en AMPERSAND     &en CARET       &kp UNDER     &en LEFT_BRACKET         &en RIGHT_BRACKET  &kp RU_QUESTION       &kp RU_EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RU_COMMA  &kp RU_DOT
-                                                &kp LEFT_SHIFT           &kp LEFT_ALT       &kp RU_EXCLAMATION    &kp RU_SPACE  &kp NUMBER_0
+&kp RU_BACKSLASH  &en PIPE        &en AT_SIGN       &en LEFT_BRACE           &en RIGHT_BRACE    &grave_codeblock      &kp RU_PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp ENTER
+&en HASH          &en APOSTROPHE  &kp RU_SEMICOLON  &kp RU_LEFT_PARENTHESIS  &kp RU_RPAR        &kp RU_PERCENT        &kp RU_MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RU_SLASH  &kp BACKSPACE
+&en AMPERSAND     &en CARET       &kp UNDER         &en LEFT_BRACKET         &en RIGHT_BRACKET  &kp RU_QUESTION       &kp RU_EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RU_COMMA  &kp RU_DOT
+                                                    &kp LEFT_SHIFT           &kp LEFT_ALT       &kp RU_EXCLAMATION    &kp RU_SPACE  &kp NUMBER_0
             >;
         };
 
