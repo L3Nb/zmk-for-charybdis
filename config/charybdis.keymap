@@ -137,7 +137,7 @@
             label = "EN";
         };
 
-        to_en_layer: ru_layer {
+        to_en_layer: to_en_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -151,7 +151,7 @@
                 <&macro_release>,
                 <&kp LEFT_ALT &to 0>;
 
-            label = "RU_LAYER";
+            label = "TO_EN_LAYER";
         };
 
         to_ru_layer: to_ru_layer {
@@ -218,7 +218,7 @@
         shift_to_ru_layer: shift_to_ru_layer {
             compatible = "zmk,behavior-mod-morph";
             label = "SHIFT_TO_RU_LAYER";
-            bindings = <&kp LEFT_SHIFT>, <&to 1>;
+            bindings = <&kp LEFT_SHIFT>, <&to_ru_layer>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
@@ -227,7 +227,7 @@
         shift_to_en_layer: shift_to_en_layer {
             compatible = "zmk,behavior-mod-morph";
             label = "SHIFT_TO_EN_LAYER";
-            bindings = <&kp LEFT_SHIFT>, <&to 0>;
+            bindings = <&kp LEFT_SHIFT>, <&to_en_layer>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
