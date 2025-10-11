@@ -79,15 +79,15 @@
             key-positions = <13 14>;
         };
 
-        to_en_layer_combo {
-            bindings = <&to 0>;
-            key-positions = <0 11>;
+        combo_to_en_layer {
+            bindings = <&to_en_layer>;
+            key-positions = <24 38>;
             layers = <1>;
         };
 
-        to_ru_layer_combo {
-            bindings = <&to 1>;
-            key-positions = <0 11>;
+        combo_to_ru_layer {
+            bindings = <&to_ru_layer>;
+            key-positions = <24 38>;
             layers = <0>;
         };
     };
@@ -260,10 +260,10 @@
 
         base {
             bindings = <
-&kp ESCAPE          &kp Q  &kp W  &kp E      &kp R     &kp T           &kp Y        &kp U        &kp I  &kp O  &kp P  &kp ENTER
-&kp TAB             &kp A  &kp S  &kp D      &kp F     &kp G           &kp H        &kp J        &kp K  &kp L  &none  &kp BACKSPACE
-&shift_to_ru_layer  &kp Z  &kp X  &kp C      &kp V     &kp B           &kp N        &kp M        &none  &none  &none  &none
-                                  &kp LCTRL  &kp LGUI  &kp LEFT_ALT    &lt 4 SPACE  &lt 2 SPACE
+&kp ESCAPE      &kp Q  &kp W  &kp E      &kp R     &kp T           &kp Y        &kp U        &kp I  &kp O  &kp P  &kp ENTER
+&kp TAB         &kp A  &kp S  &kp D      &kp F     &kp G           &kp H        &kp J        &kp K  &kp L  &none  &kp BACKSPACE
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C      &kp V     &kp B           &kp N        &kp M        &none  &none  &none  &none
+                              &kp LCTRL  &kp LGUI  &kp LEFT_ALT    &lt 4 SPACE  &lt 2 SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -271,10 +271,10 @@
 
         rus {
             bindings = <
-&kp ESCAPE          &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &ye_yo                &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &sha_scha           &kp RU_CYRILLIC_ZE  &myagkiy_tverdiy     &kp ENTER
-&kp TAB             &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &kp BACKSPACE
-&shift_to_en_layer  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_HA
-                                                                   &kp LCTRL           &kp LGUI            &kp LEFT_ALT          &lt 4 SPACE         &lt 3 SPACE
+&kp ESCAPE      &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &ye_yo                &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &sha_scha           &kp RU_CYRILLIC_ZE  &myagkiy_tverdiy     &kp ENTER
+&kp TAB         &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &kp BACKSPACE
+&kp LEFT_SHIFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_E    &kp RU_CYRILLIC_HA
+                                                               &kp LCTRL           &kp LGUI            &kp LEFT_ALT          &lt 4 SPACE         &lt 3 SPACE
             >;
 
             sensor-bindings =
